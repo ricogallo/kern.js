@@ -379,17 +379,9 @@
 
     $("#kernjs_generate").click(function () {
       var outputHTML = '';
-      var transitionEnd = "TransitionEnd";
+      var transitionEnd = "webkitTransitionEnd";
 
       $("#kernjs_overlay").addClass('kernjs_animate');
-
-      if ($.browser.webkit) {
-        transitionEnd = "webkitTransitionEnd";
-      } else if ($.browser.mozilla) {
-        transitionEnd = "transitionend";
-      } else if ($.browser.opera) {
-        transitionEnd = "oTransitionEnd";
-      }
 
       if (activeEl) {
         outputHTML += '<div id="kernjs_container">';
